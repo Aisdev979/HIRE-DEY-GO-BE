@@ -3,8 +3,8 @@ import Job from "../../models/job.model.js";
 export const getJobs = async (req, res, next) => {
   try {
     // --- Pagination ---
-    const page = Math.max(1, Number.parseInt(req.query.page) || 1);
-    const limit = Number.parseInt(req.query.limit) || 10;
+    const page = Math.max(1, parseInt(req.query.page) || 1);
+    const limit = 10;
     const skip = (page - 1) * limit;
 
     // --- Filters ---
@@ -83,10 +83,10 @@ export const createJob = async (req, res, next) => {
     try {
         const newJobPosting = await Job.create({
             ...req.body,
-            // companyId: 12,
-            // postedBy: "John Doe",
-            type: req.body.type.toUpperCase(),
-            status: req.body.status.toUpperCase()
+            companyId: req.body.companyId,
+            postedBy: req.userId,
+            type: req.body.type?.toUpperCase() || "FULL_TIME",
+            status: req.body.status?.toUpperCase() || "ACTIVE"
         })
 
         res.status(201).json({

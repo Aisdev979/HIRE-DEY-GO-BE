@@ -48,7 +48,7 @@ export const validateRegister = (data) => {
     };
   } catch (error) {
     if (error instanceof z.ZodError) {
-      const errors = error.errors.map((err) => ({
+      const errors = error.issues.map((err) => ({
         field: err.path.join("."),
         message: err.message,
       }));
@@ -89,7 +89,7 @@ export const validateLogin = (data) => {
     };
   } catch (error) {
     if (error instanceof z.ZodError) {
-      const errors = error.errors.map((err) => ({
+      const errors = error.issues.map((err) => ({
         field: err.path.join("."),
         message: err.message,
       }));
@@ -126,7 +126,7 @@ export const validateRefreshToken = (data) => {
     };
   } catch (error) {
     if (error instanceof z.ZodError) {
-      const errors = error.errors.map((err) => ({
+      const errors = error.issues.map((err) => ({
         field: err.path.join("."),
         message: err.message,
       }));
@@ -168,7 +168,7 @@ export const validateVerifyEmail = (data) => {
     };
   } catch (error) {
     if (error instanceof z.ZodError) {
-      const errors = error.errors.map((err) => ({
+      const errors = error.issues.map((err) => ({
         field: err.path.join("."),
         message: err.message,
       }));
@@ -206,7 +206,7 @@ export const validateForgotPassword = (data) => {
     };
   } catch (error) {
     if (error instanceof z.ZodError) {
-      const errors = error.errors.map((err) => ({
+      const errors = error.issues.map((err) => ({
         field: err.path.join("."),
         message: err.message,
       }));
@@ -260,7 +260,7 @@ export const validateResetPassword = (data) => {
     };
   } catch (error) {
     if (error instanceof z.ZodError) {
-      const errors = error.errors.map((err) => ({
+      const errors = error.issues.map((err) => ({
         field: err.path.join("."),
         message: err.message,
       }));

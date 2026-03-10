@@ -7,6 +7,10 @@ const app = express()
 
 app.use(express.json())
 
+app.get("/", (req, res) => {
+    res.status(200).send("Hello and welcome to hire dey go")
+})
+
 app.use("/api/v1/auth", authRoute)
 app.use("/api/v1", jobRoute)
 app.use(errorMiddleware)
