@@ -10,7 +10,7 @@ const options = {
     },
     servers: [
       { url: "http://localhost:5000", description: "Local" },
-      { url: "https://hire-dey-go-be-1.onrender.com", description: "Production" },
+      { url: "https://hire-dey-go-be-8x3c.onrender.com", description: "Production" },
     ],
     components: {
       securitySchemes: {
